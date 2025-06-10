@@ -16,7 +16,7 @@ from collections import deque
 import time
 from random import randint
 
-# Version 1
+# Version 2
 
 
 
@@ -25,8 +25,8 @@ def dec2bin(dez, signed): # takes int and returns string
         result = ''
         while dez > 0:
             result = str(dez % 2) + result
-            dez //= 2        # Teilen ohne Rest
-        return (amount_of_qubits-len(result))*'0'+result # erweitert auf Anzahl der Qubits mit führenden Nullen
+            dez //= 2        # divide with no remainder
+        return (amount_of_qubits-len(result))*'0'+result # extended to the full number of qubits using leading zeros
     else:
         dez += 2**(amount_of_qubits-1)
         a = dec2bin(dez, signed)
